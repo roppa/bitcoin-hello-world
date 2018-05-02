@@ -1,0 +1,22 @@
+{
+  "name": "quant-example",
+  "version": "1.0.0",
+  "description": "Hello World app",
+  "main": "index.js",
+  "dependencies": {
+    "bitcore-explorers": "1.0.1",
+    "bitcore-lib": "0.15.0",
+    "bitcore-message": "1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "remove:bcmessagelib": "rm -rf ./node_modules/bitcore-message/node_modules/bitcore-lib",
+    "remove:bcexplorerslib": "rm -rf ./node_modules/bitcore-explorers/node_modules/bitcore-lib",
+    "sym:bcmessagelib": "ln -s ./node_modules/bitcore-lib ./node_modules/bitcore-message/node_modules/bitcore-lib",
+    "sym:bcexplorerslib": "ln -s ./node_modules/bitcore-lib ./node_modules/bitcore-explorers/node_modules/bitcore-lib",
+    "postinstall": "npm run 'remove:bcmessagelib' && npm run 'sym:bcmessagelib' && npm run 'remove:bcexplorerslib' && npm run 'sym:bcexplorerslib'",
+    "test": ""
+  },
+  "author": "Mark Robson",
+  "license": "ISC"
+}
